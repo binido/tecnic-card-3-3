@@ -1,5 +1,6 @@
 const workoutService = require("../services/workoutService");
 
+//Controller
 const getAllWorkouts = (req, res) => {
   const { mode } = req.query;
   try {
@@ -10,12 +11,11 @@ const getAllWorkouts = (req, res) => {
   } catch (error) {
     res.status(error?.status || 500).send({
       status: "FAILED",
-      data: { error: error?.massage || error },
+      data: { error: error?.message || error },
     });
   }
 };
 
-//Controller
 const getOneWorkout = (req, res) => {
   const {
     params: { workoutId },
@@ -27,7 +27,7 @@ const getOneWorkout = (req, res) => {
   } catch (error) {
     res.status(error?.status || 500).send({
       status: "FAILED",
-      data: { error: error?.massage || error },
+      data: { error: error?.message || error },
     });
   }
 };
@@ -66,7 +66,7 @@ const createNewWorkout = (req, res) => {
   } catch (error) {
     res.status(error?.status || 500).send({
       status: "FAILED",
-      data: { error: error?.massage || error },
+      data: { error: error?.message || error },
     });
   }
 };
@@ -82,7 +82,7 @@ const updateOneWorkout = (req, res) => {
   } catch (error) {
     res.status(error?.status || 500).send({
       status: "FAILED",
-      data: { error: error?.massage || error },
+      data: { error: error?.message || error },
     });
   }
 };
@@ -97,7 +97,7 @@ const deleteOneWorkout = (req, res) => {
   } catch (error) {
     res.status(error?.status || 500).send({
       status: "FAILED",
-      data: { error: error?.massage || error },
+      data: { error: error?.message || error },
     });
   }
 };

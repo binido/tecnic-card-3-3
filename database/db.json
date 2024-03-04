@@ -27,7 +27,7 @@
     {
       "id": "4a3d9aaa-608c-49a7-a004-66305ad4ab50",
       "name": "Dead Push-Ups",
-      "mode": "AMRAP 10",
+      "mode": "AMRAP",
       "equipment": [
         "barbell"
       ],
@@ -95,11 +95,6 @@
       "id": "fb9fbfae-a533-4670-94be-a7dd1f54aae2",
       "createAt": "3/4/2024, 7:38:23 AM",
       "updateAt": "3/4/2024, 7:38:23 AM"
-    },
-    {
-      "workout": "4a3d9aaa-608c-49a7-a004-66305ad4ab50",
-      "record": "jfdhgjhdfjhgdf",
-      "id": "201f9d20-7b64-4226-99e4-1df59d70ee49"
     },
     {
       "name": "Jumping (Not) Made Easy",
