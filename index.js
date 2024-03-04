@@ -4,6 +4,11 @@ const bodyParser = require("body-parser");
 const WorkoutRouter = require("./routes/workoutRoutes");
 const RecordRouter = require("./routes/recordRoutes");
 
+//Cache, but comment on the cache in the router!!!!
+// const apicache = require("apicache");
+// const cache = apicache.middleware;
+// app.use(cache("2 minutes"));
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
