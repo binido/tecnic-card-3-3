@@ -2,8 +2,18 @@ const DB = require("./db.json");
 
 const { saveToDatabase } = require("./utils");
 
-const getAllWorkouts = () => {
-  return DB.workouts;
+const getAllWorkouts = (filterParams) => {
+  try {
+    let workouts = DB.workouts;
+    if (filterParams.mode) {
+      return DB.workouts.filter((workout) =>
+        workout.mode.toLowerCase().includes(filterParams.mode)
+      );
+    }
+    return workouts;
+  } catch (error) {
+    throw { status: 500, massage: error };
+  }
 };
 
 //Workout
@@ -22,7 +32,7 @@ const getOneWorkout = (workoutId) => {
   } catch (error) {
     throw {
       status: 500,
-      message: error?.message || error,
+      message: error?.massage || error,
     };
   }
 };
@@ -53,7 +63,7 @@ const updateOneWorkout = (workoutId, body) => {
   } catch (error) {
     throw {
       status: 500,
-      message: error?.message || error,
+      message: error?.massage || error,
     };
   }
 };
@@ -77,7 +87,7 @@ const deleteOneWorkout = (workoutId) => {
   } catch (error) {
     throw {
       status: 500,
-      message: error?.message || error,
+      message: error?.massage || error,
     };
   }
 };
@@ -98,7 +108,7 @@ const createNewWorkout = (newWorkout) => {
   } catch (error) {
     throw {
       status: 500,
-      message: error?.message || error,
+      message: error?.massage || error,
     };
   }
 };
